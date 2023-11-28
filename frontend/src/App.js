@@ -19,7 +19,7 @@ function App() {
         </a>
       </header>
 
-      <h1 className="text-5xl font-bold underline bg-red-500">
+      <h1 className="text-5xl font-bold underline bg-red-500 py-2">
         Hello world!
       </h1>
 
