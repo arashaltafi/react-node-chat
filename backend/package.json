@@ -17,6 +17,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "console.log('test')"
+    "start": "echo test"
   }
 }
