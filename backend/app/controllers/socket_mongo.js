@@ -134,6 +134,10 @@ module.exports = (socket, io) => {
         }
     });
 
+    socket.on('message', async (data) => {
+        io.emit('sendMessage', data);
+    });
+
     socket.on('disconnect', () => {
         console.log('A user disconnected', socket.id);
     });
