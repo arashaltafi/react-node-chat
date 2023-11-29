@@ -16,9 +16,13 @@ const Author = (props) => {
                 src={avatar}
                 alt={firstName}
                 sx={{ width: 88, height: 88 }}
+                onClick={() => {
+                    props.click(firstName + ' ' + lastName);
+                }}
             />
             <p className="text-white text-center font-bold text-xl">نام نویسنده: {firstName + ' ' + lastName}</p>
             <p className="text-white text-center text-lg">تاریخ عضویت: {date}</p>
+            <p>{props.children}</p>
         </div>
     )
 }
