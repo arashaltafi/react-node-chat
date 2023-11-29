@@ -15,3 +15,27 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* scroll bar customization */
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+          background: #757575;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+          background: #e5e7eb;
+          border-radius: 2px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+          background: #BDBDBD;
+      }
+}
