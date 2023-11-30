@@ -95,9 +95,9 @@
     -->
 
   <script>
-    document.addEventListener("contextmenu", (event) =>
-      event.preventDefault()
-    );
+    // document.addEventListener("contextmenu", (event) =>
+    //   event.preventDefault()
+    // );
     document.onkeydown = function (e) {
       if (event.keyCode == 123) {
         return false;
@@ -115,13 +115,6 @@
         return false;
       }
     };
-
-    window.addEventListener(
-      "beforeinstallprompt",
-      function (beforeInstallPromptEvent) {
-        beforeInstallPromptEvent.preventDefault(); // Prevents immediate prompt display
-      }
-    );
   </script>
 
   <script>

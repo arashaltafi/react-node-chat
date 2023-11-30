@@ -22,7 +22,7 @@ const Author = (props) => {
             />
             <p className="text-white text-center font-bold text-xl">نام نویسنده: {firstName + ' ' + lastName}</p>
             <p className="text-white text-center text-lg">تاریخ عضویت: {date}</p>
-            <p>{props.children}</p>
+            {props.children}
         </div>
     )
 }
