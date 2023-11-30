@@ -9,6 +9,14 @@ const Author = (props) => {
     const lastName = props.faker.name.lastName()
     const date = new persianDate(props.faker.date.future().getTime()).format("dddd, MMMM DD YYYY, h:mm:ss a")
 
+    const handleClick = () => {
+        alert('click')
+    }
+
+    const handleClick2 = (event) => {
+        alert(event.target.tagName)
+    }
+
     return (
         <div
             className={`w-1/2 inline-flex flex-col justify-center items-center gap-y-4 mt-8 px-4 py-6 rounded-lg shadow-xl mb-8 ${props.color || 'bg-gray-300'}`}>
@@ -22,6 +30,8 @@ const Author = (props) => {
             />
             <p className="text-white text-center font-bold text-xl">نام نویسنده: {firstName + ' ' + lastName}</p>
             <p className="text-white text-center text-lg">تاریخ عضویت: {date}</p>
+            <button onClick={ handleClick }>Test Click</button>
+            <button onClick={ (event) => handleClick2(event) }>Test Click 2</button>
             {props.children}
         </div>
     )
