@@ -25,12 +25,12 @@ code {
 
       /* Track */
       ::-webkit-scrollbar-track {
-          background: #757575;
+          background: #e5e7eb;
       }
 
       /* Handle */
       ::-webkit-scrollbar-thumb {
-          background: #e5e7eb;
+          background: #757575;
           border-radius: 2px;
       }
 

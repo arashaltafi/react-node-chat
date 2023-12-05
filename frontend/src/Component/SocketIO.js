@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const BASE_URL = 'ws://localhost:3001'
+const BASE_URL = '192.168.1.100:3001'
 
 const Socket = () => {
     const [messages, setMessages] = useState([]);
@@ -9,11 +9,8 @@ const Socket = () => {
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
-        setMessages(['test 1', 'test 2', 'test 3'])
-
         const newSocket = io(BASE_URL);
-
-        newSocket.withCredentials = false;
+        console.log(BASE_URL);
 
         newSocket.on('connect', () => {
             console.log('Connected to the Socket.IO server');
@@ -24,10 +21,6 @@ const Socket = () => {
         });
 
         newSocket.on('sendMessage', (message) => {
-            setMessages((prevMessages) => [...prevMessages, message]);
-        });
-
-        newSocket.on('message', (message) => {
             setMessages((prevMessages) => [...prevMessages, message]);
         });
 
