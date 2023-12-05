@@ -2,6 +2,7 @@ import { react } from 'react';
 import { faker } from '@faker-js/faker/locale/fa';
 import Author from './Component/Autor';
 import Socket from './Component/SocketIO';
+import './Component/Firebase';
 
 const App = () => {
   return (
