@@ -4,6 +4,7 @@ import Author from './Component/Autor';
 import Socket from './Component/SocketIO';
 import './Component/Firebase';
 import Form from './Component/Form';
+import Test from './Component/Test';
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
       <Author faker={faker} color={"bg-teal-500"} click={handleClick}/>
       <Author faker={faker} color={"bg-yellow-500"} click={handleClick}/>
       <Form />
+      <Test />
     </div>
   );
 }
