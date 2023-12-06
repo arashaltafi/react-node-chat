@@ -22,6 +22,7 @@ const Socket = () => {
 
         newSocket.on('sendMessage', (message) => {
             setMessages((prevMessages) => [...prevMessages, message]);
+            showNotification('Notification Title', message);
         });
 
         setSocket(newSocket);
@@ -30,6 +31,30 @@ const Socket = () => {
             newSocket.disconnect();
         };
     }, []);
+
+    const showNotification = (title, body) => {
+        Notification.requestPermission().then((permission) => {
+            if (permission === "granted") {
+                new Notification(title, {
+                    body: body,
+                    dir: 'ltr',
+                    icon: './assets/icons/icon-128x128.png',
+                    image: 'https://arashaltafi.ir/arash.jpg',
+                    badge: '/assets/icons/icon-128x128.png',
+                    tag: 'hw1',
+                    data: {
+                        url: "https://arashaltafi.ir"
+                    },
+                    renotify: true,
+                    requireInteraction: true,
+                    silent: false,
+                    vibrate: [200, 100, 200]
+                });
+            } else {
+                alert("Do not have permission!")
+            }
+        });
+    }
 
     const sendMessage = () => {
         if (socket) {
