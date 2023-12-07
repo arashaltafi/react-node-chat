@@ -13,6 +13,7 @@ import Profile from './Component/Profile';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import ReactFormHook from './Component/ReactFormHook';
 import CustomHook from './Component/CustomHook';
+import Reducer from './Component/Reducer';
 
 const App = () => {
 
@@ -59,6 +60,7 @@ const App = () => {
 
         <ReactFormHook />
         <CustomHook />
+        <Reducer />
       </QueryClientProvider>
     </div>
   );
