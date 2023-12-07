@@ -4,6 +4,8 @@ import { ACTION_TYPES } from '../reducer/FactEnums'
 
 const Reducer = () => {
 
+    //send data in dispatch function to reducer and reducer will return new state object.
+    //useReducer takes two arguments 1. reducer function 2. initial state
     const [state, dispatch] = useReducer(factReducer, initialState)
 
     const fetchFact = async () => {
