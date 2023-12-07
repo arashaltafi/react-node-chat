@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import { factReducer, initialState } from '../reducer/factReducer'
-import { ACION_TYPES } from '../reducer/FactEnums'
+import { ACTION_TYPES } from '../reducer/FactEnums'
 
 const Reducer = () => {
 
@@ -8,12 +8,12 @@ const Reducer = () => {
 
     const fetchFact = async () => {
         try {
-            dispatch({ type: ACION_TYPES.FETCH_REQUEST })
+            dispatch({ type: ACTION_TYPES.FETCH_REQUEST })
             const response = await fetch('https://catfact.ninja/fact')
             const data = await response.json()
-            dispatch({ type: ACION_TYPES.FETCH_SUCCESS, payload: data.fact })
+            dispatch({ type: ACTION_TYPES.FETCH_SUCCESS, payload: data.fact })
         } catch (error) {
-            dispatch({ type: ACION_TYPES.FETCH_FAIL, payload: error.message })
+            dispatch({ type: ACTION_TYPES.FETCH_FAIL, payload: error.message })
         }
     }
 

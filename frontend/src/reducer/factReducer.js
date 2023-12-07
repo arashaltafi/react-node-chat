@@ -1,4 +1,4 @@
-import { ACION_TYPES } from "./FactEnums"
+import { ACTION_TYPES } from "./FactEnums"
 
 const initialState = {
     loading: false,
@@ -8,11 +8,11 @@ const initialState = {
 
 const factReducer = (state, action) => {
     switch (action.type) {
-        case ACION_TYPES.FETCH_REQUEST:
+        case ACTION_TYPES.FETCH_REQUEST:
             return { ...state, loading: true }
-        case ACION_TYPES.FETCH_SUCCESS:
+        case ACTION_TYPES.FETCH_SUCCESS:
             return { ...state, loading: false, fact: action.payload }
-        case ACION_TYPES.FETCH_FAIL:
+        case ACTION_TYPES.FETCH_FAIL:
             return { ...state, loading: false, error: action.payload }
         default:
             return state
