@@ -12,6 +12,7 @@ import Contact from './Component/Contact';
 import Profile from './Component/Profile';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import ReactFormHook from './Component/ReactFormHook';
+import CustomHook from './Component/CustomHook';
 
 const App = () => {
 
@@ -57,6 +58,7 @@ const App = () => {
         </Router>
 
         <ReactFormHook />
+        <CustomHook />
       </QueryClientProvider>
     </div>
   );
