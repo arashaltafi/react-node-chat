@@ -11,6 +11,7 @@ import About from './Component/About';
 import Contact from './Component/Contact';
 import Profile from './Component/Profile';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import ReactFormHook from './Component/ReactFormHook';
 
 const App = () => {
 
@@ -54,6 +55,8 @@ const App = () => {
             <Link to='/about'><h1 className={'m-2 p-2 bg-pink-400'}>About</h1></Link>
           </nav>
         </Router>
+
+        <ReactFormHook />
       </QueryClientProvider>
     </div>
   );
