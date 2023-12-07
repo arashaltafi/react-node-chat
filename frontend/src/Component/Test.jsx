@@ -1,6 +1,7 @@
 import Axios from 'axios'
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
+import { useQuery } from 'react-query'
 
 const Test = () => {
 
@@ -27,6 +28,14 @@ const Test = () => {
         });
     }
 
+    const { data, isLoading, isError, error, refetch } = useQuery('catFact', () => {
+        return Axios.get('https://catfact.ninja/fact').then((res) => {
+            return res;
+        }).catch((err) => {
+            return console.log(err.message);
+        })
+    })
+
     const handleChange = (event) => {
         setName(event.target.value);
     }
@@ -39,7 +48,7 @@ const Test = () => {
         });
     }
 
-    return (
+    return (isLoading ? <h1>LOADING ...</h1> :
         <div>
             <h1>{catFact}</h1>
             <button className='bg-red-500 p-2 m-2' onClick={fetchCatFact}>fetch cat fact</button>
@@ -47,9 +56,10 @@ const Test = () => {
             <h1 className='mt-8'>guess age by name</h1>
             <input className='p-2 text-lg text-center' placeholder='enter your name' type="text" onChange={handleChange} />
             <button className='bg-red-500 p-2 m-2' onClick={fetchAgeGuess}>fetch cat fact</button>
-        <p className='mb-8'>{age > 0 && `your age is: ${age}`}</p>
+            <p className='mb-8'>{age > 0 && `your age is: ${age}`}</p>
         </div>
     )
+
 }
 
 export default Test
